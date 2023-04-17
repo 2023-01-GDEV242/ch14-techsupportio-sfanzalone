@@ -70,61 +70,70 @@ public class Responder
     /**
      * Enter all the known keywords and their associated responses
      * into our response map.
+     * The data is located within a text file, which pulls the
+     * information from the text file, related to this method.
      */
     private void fillResponseMap()
     {
-        responseMap.put("crash\n\n", "crashes\n\n",
-                        "Well, it never crashes on our system.\n" +
+        responseMap.put("crash", "crashes",
+                        "\n\nWell, it never crashes on our system.\n" +
                         "It must have something to do with your system.\n" +
                         "Tell me more about your configuration.\n\n");
-        responseMap.put("slow\n\n", 
-                        "I think this has to do with your hardware.\n" +
+        responseMap.put("slow", 
+                        "\n\nI think this has to do with your hardware.\n" +
                         "Upgrading your processor should solve all\n" +
                         "performance problems. Have you got a problem\n" +
                         "with our software?\n\n");
-        responseMap.put("performance\n\n", 
-                        "Performance was quite adequate in all our\n" +
+        responseMap.put("performance", 
+                        "\n\nPerformance was quite adequate in all our\n" +
                         "tests. Are you running any other processes\n" +
                         "in the background?\n\n");
-        responseMap.put("bug\n\n", "buggy\n\n",
-                        "Well, you know, all software has some bugs.\n" +
+        responseMap.put("bug", "buggy",
+                        "\n\nWell, you know, all software has some bugs.\n" +
                         "But our software engineers are working very\n" +
                         "hard to fix them. Can you describe the problem\n" +
                         "a bit further?\n\n");
-        responseMap.put("windows\n\n", 
-                        "This is a known bug to do with the Windows\n" +
+        responseMap.put("windows", 
+                        "\n\nThis is a known bug to do with the Windows\n" +
                         "operating system. Please report it to\n" +
                         "Microsoft. There is nothing we can do about\n" +
                         "this.\n\n");
-        responseMap.put("macintosh\n\n", 
-                        "This is a known bug to do with the Mac\n" +
+        responseMap.put("macintosh", 
+                        "\n\nThis is a known bug to do with the Mac\n" +
                         "operating system. Please report it to Apple.\n" +
                         "There is nothing we can do about this.\n\n");
-        responseMap.put("expensive\n\n", 
-                        "The cost of our product is quite competitive.\n" +
-                        "Have you looked around and really compared\n" +
-                        "our features?\n\n");
-        responseMap.put("installation\n\n", 
-                        "The installation is really quite straight\n" +
+        responseMap.put("expensive", 
+                        "\n\nThe cost of our product is quite\n" +
+                        "competitive. Have you looked around and really\n" +
+                        "compared our features?\n\n");
+        responseMap.put("installation", 
+                        "\n\nThe installation is really quite straight\n" +
                         "forward. We have tons of wizards that do\n" +
                         "all the work for you. Have you read the\n" +
                         "installation instructions?\n\n");
-        responseMap.put("memory\n\n", 
-                        "If you read the system requirements carefully,\n" +
-                        "you will see that the specified memory\n" +
-                        "requirements are 1.5 giga byte. You\n" +
+        responseMap.put("memory", 
+                        "\n\nIf you read the system requirements\n" +
+                        "carefully, you will see that the specified\n" +
+                        "memory requirements are 1.5 giga byte. You\n" +
                         "really should upgrade your memory. Anything\n" +
                         "else you want to know?\n\n");
-        responseMap.put("linux\n\n", 
-                        "We take Linux support very seriously. But\n" +
+        responseMap.put("linux", 
+                        "\n\nWe take Linux support very seriously. But\n" +
                         "there are some problems. Most have to do with\n" +
                         "incompatible glibc versions. Can you be a bit\n" +
                         "more precise?\n\n");
-        responseMap.put("bluej\n\n", 
-                        "Ahhh, BlueJ, yes. We tried to buy out those\n" +
+        responseMap.put("bluej", 
+                        "\n\nAhhh, BlueJ, yes. We tried to buy out those\n" +
                         "guys long ago, but they simply won't sell...\n" +
                         "Stubborn people they are. Nothing we can\n" +
                         "do about it, I'm afraid.\n\n");
+        responseMap.put("other", 
+                        "\n\nIt's good to hear that you are not\n" +
+                        "experiencing problems with the any of the\n" +
+                        "operating systems we are aware of. But, if\n" +
+                        "your situation has to do with how Java works,\n" +
+                        "please refer to the Java documentation of\n" +
+                        "specific methods, clauses, etc.\n\n");
     }
 
     /**
@@ -150,20 +159,20 @@ public class Responder
         catch(FileNotFoundException e)
         {
             System.err.println("Unable to open " +
-                                FILE_OF_DEFAULT_RESPONSES);
+                                FILE_OF_DEFAULT_RESPONSES + "\n\n");
         }
         
         catch(IOException e)
         {
             System.err.println("A problem was encountered reading " +
-                               FILE_OF_DEFAULT_RESPONSES);
+                               FILE_OF_DEFAULT_RESPONSES + "\n\n");
         }
         
         // Make sure we have at least one response.
         
         if(defaultResponses.size() == 0)
         {
-            defaultResponses.add("Could you elaborate on that?");
+            defaultResponses.add("Could you elaborate on that?\n\n");
         }
     }
 
