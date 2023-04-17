@@ -58,16 +58,6 @@ public class Responder
             {
                 return response;
             }
-            
-            else
-            {
-                System.out.println("Try using a different keyword.\n");
-                System.out.println("The keywords you can use are...\n\n");
-                System.out.println("crash, crashes, slow, performance, " +
-                                    "bug, buggy, windows, macintosh, \n\n" +
-                                    "expensive, installation, memory, " +
-                                    "linux, bluej, or other.\n\n");
-            }
         }
         // If we get here, none of the words from the input line was
         // recognized.
@@ -155,8 +145,16 @@ public class Responder
                         "your situation has to do with how Java works,\n" +
                         "please refer to the Java documentation of\n" +
                         "specific methods, clauses, etc.\n\n");
+        responseMap.put("mobile",
+                        "We are not capable of interacting with you\n" +
+                        "on a mobile device. This is something we\n" + 
+                        "should consider doing.\n\n");
+        responseMap.put("documentation",
+                        "Feel free to view the documentation found\n" +
+                        "within this system. This system has public\n" +
+                        "access to all users!\n\n");
         
-        //These responses and keywords can also be viewed in the file
+        //These responses and keywords can also be viewed in the text file
         //named default.txt.
         responseMap.get(FILE_OF_DEFAULT_RESPONSES);
     }

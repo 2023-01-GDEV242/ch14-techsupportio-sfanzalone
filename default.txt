@@ -74,3 +74,11 @@ It's good to hear that you are not experiencing problems with the any
 of the operating systems we are aware of. But, if your situation has
 to do with how Java works, please refer to the Java documentation of
 specific methods, clauses, etc.
+
+mobile,
+We are not capable of interacting with you on a mobile device.
+This is something we should consider doing.
+
+documentation,
+Feel free to view the documentation found within this system.
+This system has public access to all users!
