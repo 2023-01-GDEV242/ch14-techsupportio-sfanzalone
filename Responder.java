@@ -70,14 +70,85 @@ public class Responder
     /**
      * Enter all the known keywords and their associated responses
      * into our response map.
-     * The data was copied over to a text file, which puts the
+     * This data is copied over to a text file, which puts the
      * information into a single new file, containing the format that
-     * was originally here.
+     * was originally here.  However, some alterations were made, but only
+     * for keywords that share the same response.
      */
     private void fillResponseMap()
     {
-        //If you wish to see the String outputs, please refer to the file
+        responseMap.put("crash",
+                        "\n\nWell, it never crashes on our system.\n" +
+                        "It must have something to do with your system.\n" +
+                        "Tell me more about your configuration.\n\n");
+        responseMap.put("crashes",
+                        "\n\nWell, it never crashes on our system.\n" +
+                        "It must have something to do with your system.\n" +
+                        "Tell me more about your configuration.\n\n");
+        responseMap.put("slow", 
+                        "\n\nI think this has to do with your hardware.\n" +
+                        "Upgrading your processor should solve all\n" +
+                        "performance problems. Have you got a problem\n" +
+                        "with our software?\n\n");
+        responseMap.put("performance", 
+                        "\n\nPerformance was quite adequate in all our\n" +
+                        "tests. Are you running any other processes\n" +
+                        "in the background?\n\n");
+        responseMap.put("bug",
+                        "\n\nWell, you know, all software has some bugs.\n" +
+                        "But our software engineers are working very\n" +
+                        "hard to fix them. Can you describe the problem\n" +
+                        "a bit further?\n\n");
+        responseMap.put("buggy",
+                        "\n\nWell, you know, all software has some bugs.\n" +
+                        "But our software engineers are working very\n" +
+                        "hard to fix them. Can you describe the problem\n" +
+                        "a bit further?\n\n");
+        responseMap.put("windows", 
+                        "\n\nThis is a known bug to do with the Windows\n" +
+                        "operating system. Please report it to\n" +
+                        "Microsoft. There is nothing we can do about\n" +
+                        "this.\n\n");
+        responseMap.put("macintosh", 
+                        "\n\nThis is a known bug to do with the Mac\n" +
+                        "operating system. Please report it to Apple.\n" +
+                        "There is nothing we can do about this.\n\n");
+        responseMap.put("expensive", 
+                        "\n\nThe cost of our product is quite\n" +
+                        "competitive. Have you looked around and really\n" +
+                        "compared our features?\n\n");
+        responseMap.put("installation", 
+                        "\n\nThe installation is really quite straight\n" +
+                        "forward. We have tons of wizards that do\n" +
+                        "all the work for you. Have you read the\n" +
+                        "installation instructions?\n\n");
+        responseMap.put("memory", 
+                        "\n\nIf you read the system requirements\n" +
+                        "carefully, you will see that the specified\n" +
+                        "memory requirements are 1.5 giga byte. You\n" +
+                        "really should upgrade your memory. Anything\n" +
+                        "else you want to know?\n\n");
+        responseMap.put("linux", 
+                        "\n\nWe take Linux support very seriously. But\n" +
+                        "there are some problems. Most have to do with\n" +
+                        "incompatible glibc versions. Can you be a bit\n" +
+                        "more precise?\n\n");
+        responseMap.put("bluej", 
+                        "\n\nAhhh, BlueJ, yes. We tried to buy out those\n" +
+                        "guys long ago, but they simply won't sell...\n" +
+                        "Stubborn people they are. Nothing we can\n" +
+                        "do about it, I'm afraid.\n\n");
+        responseMap.put("other", 
+                        "\n\nIt's good to hear that you are not\n" +
+                        "experiencing problems with the any of the\n" +
+                        "operating systems we are aware of. But, if\n" +
+                        "your situation has to do with how Java works,\n" +
+                        "please refer to the Java documentation of\n" +
+                        "specific methods, clauses, etc.\n\n");
+        
+        //These responses and keywords can also be viewed in the file
         //named default.txt.
+        responseMap.get(FILE_OF_DEFAULT_RESPONSES);
     }
 
     /**
