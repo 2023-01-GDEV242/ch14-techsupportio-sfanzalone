@@ -167,7 +167,7 @@ public class Responder
             while(response != null)
             {
                 defaultResponses.add(response);
-                response = reader.readLine() + "\n";
+                response = reader.readLine();
             }
         }
         
