@@ -57,11 +57,13 @@ public class SupportSystem
      */
     private void printWelcome()
     {
-        System.out.println("Welcome to the DodgySoft Technical Support System.");
+        System.out.println("Welcome to the DodgySoft Technical Support" +
+                            "System.");
         System.out.println();
         System.out.println("Please tell us about your problem.");
-        System.out.println("We will assist you with any problem you might have.");
-        System.out.println("Please type 'bye' to exit our system.");
+        System.out.println("We will assist you with any problem you might" +
+                            "have.\n");
+        System.out.println("Please type 'bye' to exit our system.\n");
     }
 
     /**
