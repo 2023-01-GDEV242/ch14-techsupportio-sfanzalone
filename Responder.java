@@ -58,11 +58,21 @@ public class Responder
             {
                 return response;
             }
+            
+            else
+            {
+                System.out.println("Try using a different keyword.\n");
+                System.out.println("The keywords you can use are...\n\n");
+                System.out.println("crash, crashes, slow, performance, " +
+                                    "bug, buggy, windows, macintosh, \n\n" +
+                                    "expensive, installation, memory, " +
+                                    "linux, bluej, or other.\n\n");
+            }
         }
         // If we get here, none of the words from the input line was
         // recognized.
-        // In this case we pick one of our default responses (what we say when
-        // we cannot think of anything else to say...)
+        // In this case we pick one of our default responses (what we say
+        // when we cannot think of anything else to say...)
         
         return pickDefaultResponse();
     }
